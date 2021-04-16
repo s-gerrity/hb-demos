@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  <link rel="stylesheet" href="/static/css/styles.css">
+
+  <script src="/static/lib/babel-standalone.js"></script>
+  <script src="/static/lib/react.development.js"></script>
+  <script src="/static/lib/react-dom.development.js"></script>
+{% endblock head %}
+
+{% block body %}
+  <p id="info">
+    The code for this demo is located at
+    <cite>static/js/sharkwords-components.jsx</cite>
+  </p>
+
+  <div id="root"></div>
+
+  <script src="/static/js/sharkwords-components.jsx" type="text/jsx"></script>
+{% endblock %}

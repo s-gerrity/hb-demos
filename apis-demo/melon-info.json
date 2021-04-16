@@ -1,0 +1,7 @@
+{
+  "id": "watermelon",
+  "available": true,
+  "name": "Watermelon",
+  "price": 5.00,
+  "countries": ["US", "CA", "MX"]
+}

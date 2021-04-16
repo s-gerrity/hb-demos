@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  <link rel="stylesheet" href="/static/css/maps.css"/>
+
+  <script src="/static/js/mapsDemo.js"></script>
+  <script
+    async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFSJXYD8gYwgSkNOQl4zZb3GeCufnQlBs&callback=initMap">
+  </script>
+{% endblock %}
+
+{% block body %}
+  <header>
+    <nav>
+      <section id="links-left">
+        <a href="/map/more">Check out the other demos!</a>
+      </section>
+      <section id="links-right">
+        <a href="/">home</a>
+      </section>
+    </nav>
+  </header>
+
+  <main>
+    <section class="map">
+      <div id="map"></div>
+    </section>
+  </main>
+{% endblock %}

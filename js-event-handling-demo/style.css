@@ -1,0 +1,33 @@
+body { font-family: sans-serif; }
+section {
+	display: flex;
+	flex-direction: column;
+	justify-contents: center;
+	align-items: center;
+}
+#angry-button {
+	background: red;
+	color: white;
+}
+
+#cancelling-events a {
+	margin: 50px 0;
+}
+#cancelling-events h4, #cancelling-events p {
+	margin: 0;
+}
+#cancelling-events form {
+	margin: 0.6em 0;
+}
+
+#cancelling-events input[type="text"] {
+	padding: 5px 3px;
+}
+
+.font-changer {
+	margin-bottom: 10px;
+}
+
+body > section:last-of-type {
+	margin-bottom: 800px;
+}

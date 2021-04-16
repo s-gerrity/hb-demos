@@ -1,0 +1,47 @@
+Our Awesome App
+===============
+
+AwesomeApp™ is a disruptive, thought-leading, growth-hacking application for
+searching for employees. It's like the Uber of employee-finding apps.
+
+First, let's get the stuff we need for our test::
+
+    >>> import json
+    >>> from server import app
+    >>> from model import Employee, Department, connect_to_db, db, example_data
+    >>> client = app.test_client()
+
+We'll use a temporary database in our tests::
+
+    >>> connect_to_db(app, 'postgresql:///testdb')
+
+We'll put some sample data into it::
+
+    >>> db.create_all()
+    >>> example_data()
+
+Let's make sure you can find an employee::
+
+   >>> leonard = Employee.query.filter(Employee.name == "Leonard").first()
+   >>> leonard.name
+   'Leonard'
+
+Let's test our find-employees-by-state::
+
+Create mock response:
+
+    >>> def _mock_state_to_code(state_name):
+    ...     return "CA"
+    >>> import server
+    >>> server.state_to_code = _mock_state_to_code
+
+   >>> r = client.get("/emps-by-state.json?state_name=California")
+   >>> info = json.loads(r.data.decode('utf-8'))
+
+We should find 4 employees:
+
+   >>> len(info['CA']) == 4
+   True
+
+   >>> sorted([e['name'] for e in info['CA']])
+   ['Leonard', 'Liz', 'Maggie', 'Nadine']

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  <link rel="stylesheet" href="/static/css/styles.css">
+{% endblock head %}
+
+{% block body %}
+  <h1>More React Demos</h1>
+  <div class="text">
+    <ul id="demo-listing">
+      <li>
+        <a href="/more/sharkwords-advanced">
+          Advanced Sharkwords
+        </a>
+        <span class="description">
+          &mdash; a version of Sharkwords where render methods are factored out
+          of the main <cite>Sharkwords</cite> class definition as functional
+          components
+        </span>
+      </li>
+
+      <li>
+        <a href="/more/sharkwords-hooks">
+          Sharkwords with Hooks
+        </a>
+        <span class="description">
+          &mdash; an implementation of Sharkwords that
+          <a href="https://reactjs.org/docs/hooks-intro.html">uses hooks</a>;
+          hooks are a new way to write React components
+        </span>
+      </li>
+    </ul>
+  </div>
+{% endblock %}

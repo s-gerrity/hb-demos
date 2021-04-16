@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <form action="/process-order" method="POST">
+
+    <label>Type:</label>
+    <select name="melon_type">
+      <option>Watermelon</option>
+      <option>Crenshaw</option>
+      <option>Yummymelon</option>
+    </select>
+
+    <label>Qty:</label>
+    <input type="number" name="qty">
+
+    <button type="submit">Buy Melons</button>
+  </form>
+
+  <p>**Free shipping on orders of 5 or more melons!**</p>
+{% endblock %}

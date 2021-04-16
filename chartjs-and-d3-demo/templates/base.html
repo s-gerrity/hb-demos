@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+
+    {# jQuery #}
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin></script>
+
+    {% block head %}{% endblock %}
+  </head>
+  <body>
+    <div id="site-nav">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/chartjs">ChartJS</a></li>
+        <li><a href="/d3">d3</a></li>
+      </ul>
+    </div>
+
+    {% block body %}{% endblock %}
+
+    {% block js %}{% endblock %}
+  </body>
+</html>

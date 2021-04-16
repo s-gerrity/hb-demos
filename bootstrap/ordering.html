@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Bootstrap Ordering Example</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="page-header">
+    <h1>Ordering Example</h1>
+  </div>
+
+<h3>Without order specified:</h3>
+  <div class="row">
+    <div class="col-xs-12 col-md-3" style="border: solid black; background-color: #99ccff">
+      <h1>Section 1</h1>
+    </div>
+
+    <div class="col-xs-12 col-md-9" style="border: solid black; background-color: #ff9966">
+      <h1>Section 2
+      </h1>
+    </div>
+  </div>
+
+<h3>With order specified:</h3>
+  <div class="row">
+    <div class="col-xs-12 col-md-3 order-md-12" style="border: solid black; background-color: #99ccff">
+      <h1>Section 1</h1>
+    </div>
+
+    <div class="col-xs-12 col-md-9 order-md-1" style="border: solid black; background-color: #ff9966">
+      <h1>Section 2
+      </h1>
+    </div>
+  </div>
+
+</div>
+
+<!-- We don't actually use any JS-based components here, but
+     we'll include the JS as an example -->
+
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js">
+
+</body>
+
+</html>

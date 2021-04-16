@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+
+  <h1>Look up Employees by State</h1>
+
+  <form action="/emps-by-state" method="GET">
+  	<label>Enter state:
+  	<input type="text" name="state"></input></label>
+  	<input type="submit" value="Submit">
+  </form>
+
+
+{% endblock %}

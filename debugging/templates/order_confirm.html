@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Order Confirmation</h1>
+
+  <p>I have confirmed your order for {{ qty }} {{ melon_type }}.</p>
+
+  {% if free_shipping %}
+    <p>Because of your order size, you will get FREE SHIPPING!</p>
+  {% endif %}
+{% endblock %}

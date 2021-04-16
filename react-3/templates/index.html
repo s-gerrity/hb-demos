@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block head %}
+  <link rel="stylesheet" href="/static/css/styles.css">
+{% endblock head %}
+
+{% block body %}
+  <nav class="small">
+    <a href="/sharkwords-final">View the complete version here</a>
+    <a href="/more">More demos!</a>
+  </nav>
+
+  <div id="root"></div>
+
+  <script src="/static/js/sharkwords.jsx" type="text/jsx"></script>
+{% endblock %}

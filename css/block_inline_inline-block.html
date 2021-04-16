@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Block, Inline and Inline Block</title>
+
+    <style>
+
+    div {
+      width: 400px;
+      padding: 0.5em;
+      margin: 1em;
+    }
+
+    .yellow {
+      background-color: yellow;
+    }
+
+    .inline-block-paragraph {
+      display: inline-block;
+      width: 150px;
+      height: 150px;
+      vertical-align: top;
+    }
+
+    </style>
+
+  </head>
+  <body>
+
+  <div class="yellow">
+    This is a block element. Notice how the yellow background
+    flows to the edge of the container, and the next element 
+    starts on a new line. I can specify a width and height. 
+  </div>
+
+  <div>
+    This paragraph contains an <span class="yellow">inline element.
+    Notice how this inline text flows with the rest of the paragraph.</span>
+    No new lines before or after an inline element. 
+  </div>
+
+  <div class="yellow inline-block-paragraph">
+    This is an inline block paragraph. I can specify a width and height
+    like a block element, but ...
+  </div>
+
+  <div class="yellow inline-block-paragraph">
+    ... this is a second inline block. Notice how it is on the same line as the
+    first inline block, just like an inline element. 
+  </div>
+
+  </body>
+</html>

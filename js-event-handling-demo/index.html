@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>JS Event Handling Demo</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <section id="basic-event-handler">
+      <h1>Basic Event Handler</h1>
+
+      <button id="angry-button">😠 Don't click me</button>
+
+      <script>
+        const button = document.querySelector('#angry-button');
+
+        button.addEventListener('click', () => {
+          alert('Stop clicking me!');
+        });
+      </script>
+    </section>
+
+    <section id="broken-event-handler">
+      <h1>Broken Event Handler</h1>
+
+      <button id="broken-button">This doesn't work!</button>
+
+      <script>
+        const brokenAlert = () => {
+          alert('Uh oh...');
+        }
+
+        document.querySelector('#broken-button')
+          .addEventListener('click', brokenAlert());
+      </script>
+    </section>
+
+    <section id="event-handling-with-jquery">
+      <h1>Event Handling with jQuery</h1>
+
+      <button id="jq-button">With jQuery</button>
+
+      <script>
+        const jqButton = $('#jq-button');
+
+        jqButton.on('click', () => {
+          alert('Handled with jQuery!');
+        });
+      </script>
+    </section>
+
+    <section id="using-event-objects">
+      <h1>Using Event Objects</h1>
+
+      <button id="event-button">See event (in console)</button>
+
+      <script>
+        const evtBtn = document.querySelector('#event-button');
+
+        evtBtn.addEventListener('click', (evt) => {
+          console.log(evt);
+        });
+      </script>
+    </section>
+
+    <section id="cancelling-events">
+      <h1>Cancelling Events</h1>
+
+      <a href="/secrets">Don't go to this page</a>
+
+      <script>
+        const secretLink = document.querySelector('a');
+
+        secretLink.addEventListener('click', (evt) => {
+          evt.preventDefault();
+
+          alert('I told you not to go to that page.');
+        });
+      </script>
+
+      <h4>Suggest a word!</h4>
+      <p>Your word must be > 5 characters long</p>
+
+      <form action="/suggest-word" method="POST">
+        <input type="text" name="word">
+        <input type="submit">
+      </form>
+
+      <script>
+        const wordForm = document.querySelector('form');
+
+        wordForm.addEventListener('submit', (evt) => {
+          const wordInput = document.querySelector('input[name="word"]');
+
+          if (wordInput.value.length < 5) {
+            evt.preventDefault();
+          }
+        });
+      </script>
+    </section>
+
+    <section id="event-target">
+      <h1>Using the Event Target</h1>
+      <button class="font-changer" id="monospace">
+        Change to monospace!
+      </button>
+      <button class="font-changer" id="sans-serif">
+        Change to sans-serif!
+      </button>
+      <button class="font-changer" id="serif">
+        Change to serif!
+      </button>
+
+      <script>
+        $('button.font-changer').on('click', (evt) => {
+          const button = $(evt.target);
+
+          const buttonId = button.attr('id');
+
+          $('body').css('fontFamily', buttonId);
+        });
+      </script>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+
+	<form action="/handle-form-session">
+		Nickname?
+		<input name="nickname" type="text">
+		Favorite Number?
+		<input name="fav_number" type="text">
+		<input type="submit">
+	</form>
+
+{% endblock %}

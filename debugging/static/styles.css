@@ -1,0 +1,22 @@
+body {
+  font-family: sans-serif;
+}
+header {
+  font-size: 200%;
+  font-weight: bold;
+  border-bottom: solid 1px black;
+  padding-top: 1em;
+  margin-bottom: 2em;
+}
+
+footer {
+  color: gray;
+  border-top: solid 1px black;
+  margin-top: 2em;
+  padding: 1em 0 1em 0;
+}
+
+#error-area {
+  color: red;
+  font-weight: bold;
+}
